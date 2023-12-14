@@ -1,5 +1,7 @@
 package com.ecommerce.project.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,4 +28,9 @@ public class AddressServiceImpl implements AddressService
     public void deleteUser(User user) {
         addressRepository.delete(user);
     }
+	
+	 @Override
+	    public List<User> getAllUsersWithAddresses() {
+	        return addressRepository.findAll();
+	    }
 }
